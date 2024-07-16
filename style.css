@@ -9,7 +9,7 @@
 main {
     min-height: 100vh;
     padding: 0px 4rem;
-    background-image: url("/assets/2593.webp");
+    background-image: url("./assets/2593.webp");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
