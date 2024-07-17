@@ -611,6 +611,7 @@ button {
     padding: 25px;
     font-size: 0.8rem;
     margin: 0px 60px 60px;
+    cursor: pointer;
     color: white;
     text-decoration: none;
     text-transform: uppercase;
@@ -891,4 +892,75 @@ footer a {
 
 footer .copyright {
     font-size: 0.6rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 1280px) {
+    footer .links {
+        font-size: 0.7rem;
+    }
+
+    .consoles {
+    }
+
+    .consoles button {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    header {
+        flex-direction: column;
+    }
+
+    header img {
+        padding-left: 50px;
+    }
+
+    /* .form-container form {
+        grid-template-columns: 1fr;
+    } */
+}
+
+@media screen and (max-width: 769px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+
+    header img {
+        padding-left: 0.5rem;
+    }
+
+    header h1 {
+        padding-left: 1.5rem;
+    }
+
+    header p {
+        padding: 1.5rem;
+    }
+
+    header button {
+        margin: 0px 25px;
+    }
+
+    .consoles {
+        flex-direction: column;
+    }
+
+    footer .links {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .animation {
+        display: none;
+    }
 }
