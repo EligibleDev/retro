@@ -1,14 +1,165 @@
+/* Global styles */
 * {
     padding: 0px;
     margin: 0px;
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
     font-style: normal;
+}
+
+body {
     overflow: hidden;
 }
+
+/* Button */
+button {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+a {
+    position: relative;
+    display: inline-block;
+    padding: 25px;
+    font-size: 0.8rem;
+    margin: 0px 60px 60px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+    filter: hue-rotate(110deg);
+}
+a:hover {
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4;
+}
+a:nth-child(1) {
+    filter: hue-rotate(270deg);
+}
+a:nth-child(2) {
+    filter: hue-rotate(0deg);
+}
+a span {
+    position: absolute;
+    display: block;
+}
+a span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+a span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+h1 {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    animation: flicker 3s linear infinite 3s;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff, 0 0 20px #f562ff,
+        0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+    padding-left: 60px;
+}
+
+/* Heading animation */
+@keyframes flicker {
+    0% {
+        text-shadow: none;
+    }
+    6% {
+        text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff, 0 0 20px #f562ff,
+            0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+    }
+    8% {
+        text-shadow: none;
+    }
+    10% {
+        text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff, 0 0 20px #f562ff,
+            0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+    }
+    12% {
+        text-shadow: none;
+    }
+    14% {
+        text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff, 0 0 20px #f562ff,
+            0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+    }
+}
+
+/* Main layout */
 main {
     min-height: 100vh;
-    padding: 0px 4rem;
+    padding: 0px 6rem;
     background-image: url("./assets/2593.webp");
     background-position: center;
     background-size: cover;
@@ -19,14 +170,92 @@ main {
 }
 
 .blur {
-    width: 95%;
     height: 95vh;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 4px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.4));
+    color: white;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 6px solid #ccc;
     border-radius: 25px;
     box-sizing: border-box;
-    overflow: auto;
+    overflow-y: scroll;
+}
+
+/* Header section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+header img {
+    object-fit: contain;
+    width: 40%;
+}
+
+header .texts {
+    flex: 1;
+    width: 60%;
+}
+
+header p {
+    padding: 2rem 60px;
+}
+
+/* Consoles section */
+section.consoles {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+
+.consoles a {
+    padding: 60px;
+}
+
+/* Form */
+section.form-container form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.form-container input,
+.form-container select {
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255, 0.5);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 5px;
+    outline: none;
+    border: 0px solid;
+}
+
+.form-container input::placeholder {
+    color: white;
+}
+
+.form-container input:focus {
+    outline: none;
+}
+
+.form-container button,
+.form-container a {
+    width: 100%;
+    margin: 5px 0px 0px;
+    grid-column: span 2 / span 2;
+    cursor: pointer;
+}
+
+/* why sign up */
+section.why-sign-up {
+    padding: 30px 0px;
+}
+
+.why-sign-up h1 {
+    padding: 0px;
 }
