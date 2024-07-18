@@ -845,20 +845,33 @@ section.form-container form {
 .form-container select {
     padding: 0.75rem 1rem;
     background: rgba(255, 255, 255, 0.5);
-    color: rgb(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     border-radius: 5px;
     outline: none;
-    border: 0px solid;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-container input::placeholder {
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.form-container input:focus {
+.form-container input:focus,
+.form-container select:focus {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     outline: none;
+}
+
+.form-container input:active,
+.form-container select:active {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .form-container button {
