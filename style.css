@@ -837,7 +837,8 @@ section.consoles {
 /* Form */
 section.form-container form {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 50%);
+    justify-content: space-between;
     gap: 8px;
 }
 
@@ -918,9 +919,6 @@ footer .copyright {
         font-size: 0.7rem;
     }
 
-    .consoles {
-    }
-
     .consoles button {
         margin-left: 0px;
         margin-right: 0px;
@@ -936,9 +934,9 @@ footer .copyright {
         padding-left: 50px;
     }
 
-    /* .form-container form {
-        grid-template-columns: 1fr;
-    } */
+    .form-container form {
+        grid-template-columns: repeat(1, 100%);
+    }
 }
 
 @media screen and (max-width: 769px) {
