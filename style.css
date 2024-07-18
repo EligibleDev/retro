@@ -399,7 +399,7 @@ body {
     animation: l10-0 2s infinite cubic-bezier(1, 175, 0.5, 175);
 }
 .loader::before {
-    content: "Loading";
+    content: "Retro";
     display: inline-block;
     animation: l10-2 2s infinite;
 }
@@ -816,6 +816,11 @@ header .texts {
 
 header p {
     padding: 2rem 60px;
+}
+
+header button {
+    background-color: #39a9fd;
+    filter: hue-rotate(0deg);
 }
 
 /* Consoles section */
